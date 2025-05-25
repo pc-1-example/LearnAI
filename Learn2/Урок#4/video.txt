@@ -1,0 +1,3 @@
+Изучение Python OpenCV / Урок #4 – Функции трансформации изображений
+
+https://youtu.be/cobu9gdC0Ao?si=u1hd83iZ7Tm2u4tW
