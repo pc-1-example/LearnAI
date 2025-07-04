@@ -1,0 +1,3 @@
+Распознавание лиц на Python | Определение возраста, эмоций и расы по фотографии лица
+
+https://youtu.be/qRCiZPiBgaE?si=XN6vG3PswMLssOd8
