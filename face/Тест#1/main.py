@@ -13,7 +13,7 @@ def face_verification(img_1, img_2):
         return _ex
     
 def main():
-    print(face_verification(img_1="faces/yan.jpg", img_2="faces/3model.jpg"))
+    print(face_verification(img_1="face/Тест#1/faces/yan.jpg", img_2="face/Тест#1/faces/3model.jpg"))
 
 if __name__ == "__main__":
     main()
