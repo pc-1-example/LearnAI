@@ -1,0 +1,3 @@
+Изучение Python OpenCV / Урок #6 – Побитовые операции и маски
+
+https://youtu.be/pjzthTPPfgs?si=hdC_s6fuXMvPf3El
