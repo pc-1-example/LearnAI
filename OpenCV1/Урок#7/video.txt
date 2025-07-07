@@ -1,3 +1,7 @@
-Урок #1 Python / Распознавание лиц OpenCV
+Изучение Python OpenCV / Урок #8 – Распознавание номерных знаков и чтение их
 
-https://youtu.be/i3MQZgS8BOM?si=fFunAwQ2bemjpXR3
+https://youtu.be/HA1IcFYU-8Q?si=r_LZp8-h73cHJ6ZN
+
+pip install easyocr
+pip install imutils - да
+pip install matplotlib - да
