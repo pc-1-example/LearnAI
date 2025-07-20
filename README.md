@@ -15,18 +15,18 @@
 
 ## 📦 Что внутри?
 
-### 🧪 Learn1 — первые нейро-эксперименты
+[Learn1](Learn1)
+[Learn2](Learn2)
+[OpenCV1](OpenCV1)
+[Learn3](Learn3)
 
-🔗 [GitHub: Learn1](https://github.com/ReNothingg/Learn1)
-📺 [YouTube: *"Твоя ПЕРВАЯ НЕЙРОСЕТЬ на Python с нуля! | За 10 минут :3"*](https://www.youtube.com/watch?v=tihq_bLfk08) <sub>Наивный код. Великие амбиции. Почти получилось.</sub>
-
----
-
-### 👁️ OpenCV1 — взгляд нейросети на этот мир
-
-🔗 [GitHub: OpenCV1](https://github.com/ReNothingg/OpenCV1)
-📺 [YouTube плейлист: *"Уроки Python OpenCV"*](https://www.youtube.com/playlist?list=PL0lO_mIqDDFUAQ2RdAgLp6Tj_fREcxk6T) <sub>Когда камера включается, но нейросеть всё равно не узнаёт твоё лицо...</sub>
-
+## 📦 Пройденные уроки
+[Распознавание лиц на Python | Определение возраста, эмоций и расы по фотографии лица](https://youtu.be/qRCiZPiBgaE?si=XN6vG3PswMLssOd8)
+[Урок #1 Python / Распознавание лиц OpenCV](https://youtu.be/i3MQZgS8BOM?si=fFunAwQ2bemjpXR3)
+[Твоя ПЕРВАЯ НЕЙРОСЕТЬ на Python с нуля! | За 10 минут :3](https://www.youtube.com/watch?v=tihq_bLfk08)
+[НЕЙРОСЕТЬ: просто о сложном! Создание нейронной сети на Python](https://youtu.be/kUDOcl9anxU?si=MTV0qjdhWmxOPi0Y)
+[Учим Нейронные Сети за 1 час! | Python Tensorflow & PyTorch YOLO](https://youtu.be/1quKqf47V6s?si=jnmCCrHbkor3_44s)
+[Уроки Python OpenCV](https://www.youtube.com/playlist?list=PL0lO_mIqDDFUAQ2RdAgLp6Tj_fREcxk6T)
 ---
 
 ### И что нибудь когда нибудь...
