@@ -21,6 +21,7 @@
 [Learn3](Learn3)
 
 ## 📦 Пройденные уроки
+
 [Распознавание лиц на Python | Определение возраста, эмоций и расы по фотографии лица](https://youtu.be/qRCiZPiBgaE?si=XN6vG3PswMLssOd8)
 
 [Урок #1 Python / Распознавание лиц OpenCV](https://youtu.be/i3MQZgS8BOM?si=fFunAwQ2bemjpXR3)
