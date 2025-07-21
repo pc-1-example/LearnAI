@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import PIL
 import torch
-import tenserflow as tf
-from tenserflow import keras
-from tenserflow.keras import layers
-from tenserflow.keras.models import Sequential
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras.models import Sequential
 
 dataset_dir = pathlib.Path("Learn3/dataset/flower_photos")
 
