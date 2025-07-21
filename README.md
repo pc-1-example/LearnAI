@@ -19,6 +19,7 @@
 [Learn2](Learn2)
 [OpenCV1](OpenCV1)
 [Learn3](Learn3)
+[Тесты](Test)
 
 ## 📦 Пройденные уроки
 
