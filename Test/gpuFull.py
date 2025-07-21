@@ -17,4 +17,3 @@ while True:
     elapsed = time.time() - start
     i += 1
     print(f"[{i}] Операция завершена за {elapsed:.4f} сек")
-s
