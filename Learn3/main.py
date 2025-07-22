@@ -41,7 +41,7 @@ val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
 num_classes = len(class_names)
 model = Sequential([
-    layers.experimental.preprocessing.Rescaling(1./255, input_shape=(img_height, img_wight, 3)),
+    layers.experimental.preprocessing.Rescaling(1./255, input_shape=(img_height, img_width, 3)),
 
     layers.Conv2D(16, 3, padding='same', activation='relu'),
     layers.MaxPooling2D(),
