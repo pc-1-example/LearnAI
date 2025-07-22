@@ -9,3 +9,4 @@ pip install tensorflow[and-cuda]
 
 Мои тайм коды остановок:
 10:02
+17:32
