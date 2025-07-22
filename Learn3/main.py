@@ -11,22 +11,24 @@ from tensorflow.keras.models import Sequential
 dataset_dir = pathlib.Path("Learn3/dataset/flower_photos")
 
 batch_size = 32
-img_wight = 180
+img_width = 180
 img_height = 180
 
 train_ds = tf.keras.utils.image_dataset_from_directory(
     dataset_dir,
+    validation_split=0.2,
     subset="training",
     seed=123,
-    image_size=(img_height, img_wight),
+    image_size=(img_height, img_width),
     batch_size=batch_size,
 )
 
 val_ds = tf.keras.utils.image_dataset_from_directory(
     dataset_dir,
+    validation_split=0.2,
     subset="validation",
     seed=123,
-    image_size=(img_height, img_wight),
+    image_size=(img_height, img_width),
     batch_size=batch_size,
 )
 
