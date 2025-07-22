@@ -8,9 +8,6 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
-#plt.style.use('dark_background') темная тема отстой
-
 dataset_dir = pathlib.Path("Learn3/dataset/flower_photos")
 
 batch_size = 32
@@ -37,10 +34,6 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
 
 class_names = train_ds.class_names
 print(f"Class names: {class_names}")
-
-AUTOTUNE = tf.data.AUTOTUNE
-train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=AUTOTUNE)
-val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
 num_classes = len(class_names)
 model = Sequential([
@@ -75,46 +68,17 @@ model.compile(
     metrics=['accuracy']
 )
 
-model.summary()
+#load model
+model.load_weights('flower_model.h5')
+loss, acc = model.evaluate(val_ds, verbose=2)
+img = tf.keras.utils.load_img("Learn3/test.png", target_size=(img_height, img_width))
+img_array = tf.keras.utils.img_to_array(img)
+img_array = tf.expand_dims(img_array, 0) 
 
-epochs = 10
-history = model.fit(
-    train_ds,
-    validation_data=val_ds,
-    epochs=epochs
-)
+predictions = model.predict(img_array)
+score = tf.nn.softmax(predictions[0])
 
-acc = history.history['accuracy']
-val_acc = history.history['val_accuracy']
-
-loss = history.history['loss']
-val_loss = history.history['val_loss']
-
-epochs_range = range(epochs)
-
-# Сохранение модели
-model.save('flower_model.h5')
-print('Model saved to flower_model.h5')
-
-# График точности
-plt.subplot(1, 2, 1)
-plt.plot(epochs_range, acc, label='Обучающая точность')
-plt.plot(epochs_range, val_acc, label='Валидационная точность')
-plt.xlabel('Эпоха')
-plt.ylabel('Точность')
-plt.title('Точность на обучении и валидации')
-plt.legend(loc='lower right')
-plt.grid(True)
-
-# График потерь
-plt.subplot(1, 2, 2)
-plt.plot(epochs_range, loss, label='Обучающая потеря')
-plt.plot(epochs_range, val_loss, label='Валидационная потеря')
-plt.xlabel('Эпоха')
-plt.ylabel('Потери')
-plt.title('Потери на обучении и валидации')
-plt.legend(loc='upper right')
-plt.grid(True)
-
-plt.tight_layout()
-plt.show()
+print("На изображении скорее всего цветок: {} с вероятностью {:.2f}%".format(
+    class_names[np.argmax(score)],
+    100 * np.max(score)
+))
