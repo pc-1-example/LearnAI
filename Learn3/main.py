@@ -9,7 +9,7 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
-
+#plt.style.use('dark_background') темная тема отстой
 
 dataset_dir = pathlib.Path("Learn3/dataset/flower_photos")
 
@@ -46,6 +46,13 @@ num_classes = len(class_names)
 model = Sequential([
     layers.Rescaling(1./255, input_shape=(img_height, img_width, 3)),
 
+    # аугментация данных 
+    # layers.experimental.preprocessing. устарел и больше не существует. Он был удален в TensorFlow 2.11
+    layers.RandomFlip("horizontal", input_shape=(img_height, img_width, 3)),
+    layers.RandomRotation(0.1),
+    layers.RandomZoom(0.1),
+    layers.RandomContrast(0.2),
+
     layers.Conv2D(16, 3, padding='same', activation='relu'),
     layers.MaxPooling2D(),
 
@@ -54,6 +61,8 @@ model = Sequential([
 
     layers.Conv2D(64, 3, padding='same', activation='relu'),
     layers.MaxPooling2D(),
+
+    layers.Dropout(0.2),
 
     layers.Flatten(),
     layers.Dense(128, activation='relu'),
@@ -83,16 +92,29 @@ val_loss = history.history['val_loss']
 
 epochs_range = range(epochs)
 
-plt.figure(figsize=(8, 8))
+# График точности
 plt.subplot(1, 2, 1)
-plt.plot(epochs_range, acc, label='Training Accuracy')
-plt.plot(epochs_range, val_acc, label='Validation Accuracy')
+plt.plot(epochs_range, acc, label='Обучающая точность')
+plt.plot(epochs_range, val_acc, label='Валидационная точность')
+plt.xlabel('Эпоха')
+plt.ylabel('Точность')
+plt.title('Точность на обучении и валидации')
 plt.legend(loc='lower right')
-plt.title('Training and Validation Accuracy')
+plt.grid(True)
 
+# График потерь
 plt.subplot(1, 2, 2)
-plt.plot(epochs_range, loss, label='Training Loss')
-plt.plot(epochs_range, val_loss, label='Validation Loss')
+plt.plot(epochs_range, loss, label='Обучающая потеря')
+plt.plot(epochs_range, val_loss, label='Валидационная потеря')
+plt.xlabel('Эпоха')
+plt.ylabel('Потери')
+plt.title('Потери на обучении и валидации')
 plt.legend(loc='upper right')
-plt.title('Training and Validation Loss')
+plt.grid(True)
+
+plt.tight_layout()
 plt.show()
+
+# Сохранение модели
+model.save_weights('flower_model')
+print('Model saved to flower_model')
