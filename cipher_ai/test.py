@@ -7,7 +7,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 stoi, itos = build_vocab()
 model = Seq2SeqTransformer(len(stoi)).to(DEVICE)
-model.load_state_dict(torch.load("model.pth", map_location=DEVICE))
+model.load_state_dict(torch.load("chiper_model.pth", map_location=DEVICE))
 model.eval()
 
 def encode(text): return torch.tensor([stoi.get(ch, 0) for ch in text], dtype=torch.long).unsqueeze(0)
