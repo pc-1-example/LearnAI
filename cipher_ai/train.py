@@ -42,4 +42,4 @@ for epoch in range(20):
         total_loss += loss.item()
     print(f"Epoch {epoch+1}: loss={total_loss/len(loader):.4f}")
 
-torch.save(model.state_dict(), "model.pth")
+torch.save(model.state_dict(), "chiper_model.pth")
