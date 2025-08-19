@@ -1,9 +1,6 @@
 __pycache__
-
-# Dataset
 Learn3/dataset/
 dataset/
-
-# Model files
 flower_model.h5
 chiper_model.pth
+.env
