@@ -1,8 +1,0 @@
-Распознавание лиц на Python | Определение возраста, эмоций и расы по фотографии лица
-
-https://youtu.be/qRCiZPiBgaE?si=XN6vG3PswMLssOd8
-
-pip install deepface
-pip install tf-keras -- если выдает отшибку, то дополнительно утснови эту библиотеку
-
-Дальше пойдет скачивание C:\Users\xxx\.deepface\weights\vgg_face_weights.h5. Это ИИ модель. Лол :)

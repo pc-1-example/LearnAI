@@ -1,0 +1,1 @@
+[Урок #1 Python / Распознавание лиц OpenCV](https://youtu.be/i3MQZgS8BOM?si=fFunAwQ2bemjpXR3)

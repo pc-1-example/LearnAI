@@ -1,0 +1,1 @@
+# [НЕЙРОСЕТЬ: просто о сложном! Создание нейронной сети на Python](https://youtu.be/kUDOcl9anxU?si=MTV0qjdhWmxOPi0Y)
