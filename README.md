@@ -35,8 +35,6 @@
 
 [Уроки Python OpenCV](https://www.youtube.com/playlist?list=PL0lO_mIqDDFUAQ2RdAgLp6Tj_fREcxk6T)
 
----
-
 ### И что нибудь когда нибудь...
 ---
 
