@@ -1,0 +1,3 @@
+Нейронная сеть с нуля: простое объяснение за 21 строку! TensorFlow🤖
+
+https://youtu.be/B4My5JAcdJA?si=DfQ6Wju4HBU8EyZQ
