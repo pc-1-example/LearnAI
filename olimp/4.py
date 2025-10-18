@@ -1,48 +1,55 @@
-def solve():
-    n = int(input())
-    s = input().strip()
+n = int(input().strip())
+s = input().strip()
 
-    has_dash = '-' in s
-    #-------------------от A (a) до Y (y)
-    #-------------------abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-
-    alowed_chars = set("abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXY-")
-    if not all(c in alowed_chars for c in s):
-        print("Error!")
-        return
-
-    if has_dash:
-        if s[0] == '-' or s[-1] == '-' or '--' in s:
-            print("Error!")
-            return
-        for ch in s:
-            if ch != '-' and ch.islower():
-                print("Error!")
-                return
-        words = s.split('-')
-        result = words[0].lower()
-        for word in words[1:]:
-            result += word.capitalize()
-        print(result)
+def is_first_form(s):
+    if '-' in s:
+        for char in s:
+            if not (char == '-' or char.isupper()):
+                return False
+        if s[0] == '-' or s[-1] == '-':
+            return False
+        for i in range(1, len(s)):
+            if s[i] == '-' and s[i-1] == '-':
+                return False
+        return True
     else:
-        if s[0].isupper():
-            print("Error!")
+        return all(char.isupper() for char in s)
 
-            # print('sycle')
-            return
-        for i in range(1, len(s)):
-            if s[i].isupper() and s[i-1].isupper():
-                print("Error!")
-                return
-        words = []
-        current_word = s[0]
-        for i in range(1, len(s)):
-            if s[i].isupper():
-                words.append(current_word.upper())
-                current_word = s[i].lower()
-            else:
-                current_word += s[i]
-        words.append(current_word.upper())
-        print('-'.join(words))
+def is_second_form(s):
+    if '-' in s:
+        return False
+    if not s[0].islower():
+        return False
+    for i in range(1, len(s)):
+        if s[i].isupper():
+            if not s[i-1].islower():
+                return False
+    return True
 
-if __name__ == "__main__":
-    solve()
+if is_first_form(s):
+    if '-' in s:
+        words = s.split('-')
+    else:
+        words = [s]
+    res = words[0].lower()
+    for i in range(1, len(words)):
+        word = words[i]
+        res += word[0] + word[1:].lower()
+    print(res)
+elif is_second_form(s):
+    words = []
+    current = []
+    for char in s:
+        if char.isupper():
+            if current:
+                words.append(''.join(current))
+                current = []
+            current.append(char)
+        else:
+            current.append(char)
+    if current:
+        words.append(''.join(current))
+    upper_words = [w.upper() for w in words]
+    print('-'.join(upper_words))
+else:
+    print("Error!")
